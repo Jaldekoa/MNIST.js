@@ -18,3 +18,15 @@ canvas {
     height: 280px;
     width: 280px;
 }
+
+section {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+button {
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+}
