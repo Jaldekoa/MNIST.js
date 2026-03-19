@@ -1,4 +1,6 @@
 const $canvas = document.querySelector('canvas');
+const $deleteBtn = document.querySelector('.delete');
+const $predictBtn = document.querySelector('.predict');
 const ctx = $canvas.getContext('2d');
 
 ctx.lineWidth = 10;
@@ -12,6 +14,7 @@ $canvas.addEventListener('mousedown', startDrawing);
 $canvas.addEventListener('mousemove', draw);
 $canvas.addEventListener('mouseup', stopDrawing);
 $canvas.addEventListener('mouseleave', stopDrawing);
+$deleteBtn.addEventListener('click', clearCanvas);
 
 function startDrawing(event) {
     const { offsetX, offsetY } = event;
@@ -35,4 +38,8 @@ function draw(event) {
 
 function stopDrawing(event) {
     isDrawing = false;
+};
+
+function clearCanvas(event) {
+    ctx.clearRect(0, 0, $canvas.width, $canvas.height)
 };
