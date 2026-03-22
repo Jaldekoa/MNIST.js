@@ -1,3 +1,5 @@
+import { NeuralNetwork, DenseLayer, ActivationLayer, ActivationFunctions } from "./neural.js";
+
 const $canvas = document.querySelector('canvas');
 const $deleteBtn = document.querySelector('.delete');
 const $predictBtn = document.querySelector('.predict');
@@ -10,11 +12,21 @@ let isDrawing = false;
 let [lastX, lastY] = [0, 0];
 let [startX, startY] = [0, 0];
 
+const net = new NeuralNetwork([
+    new DenseLayer(784, 128),
+    new ActivationLayer(ActivationFunctions.relu, ActivationFunctions.reluPrime),
+    new DenseLayer(128, 10),
+    new ActivationLayer(ActivationFunctions.softmax, ActivationFunctions.softmaxPrime)
+]);
+
 $canvas.addEventListener('mousedown', startDrawing);
 $canvas.addEventListener('mousemove', draw);
 $canvas.addEventListener('mouseup', stopDrawing);
 $canvas.addEventListener('mouseleave', stopDrawing);
 $deleteBtn.addEventListener('click', clearCanvas);
+$predictBtn.addEventListener('click', (event) => {
+
+})
 
 function startDrawing(event) {
     const { offsetX, offsetY } = event;
