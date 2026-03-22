@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "convert": "node data/convert.js"
+    "convert": "node data/convert.js",
+    "train": "node data/train.js"
   },
   "repository": {
     "type": "git",
@@ -14,9 +15,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/Jaldekoa/MNIST.js/issues"
   },
-  "homepage": "https://github.com/Jaldekoa/MNIST.js#readme"
+  "homepage": "https://github.com/Jaldekoa/MNIST.js#readme",
+  "dependencies": {
+    "numjs": "^0.16.1"
+  }
 }
