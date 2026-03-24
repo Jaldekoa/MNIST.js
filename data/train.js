@@ -41,7 +41,7 @@ async function trainModel(network, trainingData, epochs, learningRate) {
 
 (async () => {
     try {
-        await trainModel(net, trainingData, 10, 0.05);
+        await trainModel(net, trainingData, 50, 0.01);
         const modelData = net.getWeights();
         fs.writeFileSync('./data/modelo_pesos.json', JSON.stringify(modelData));
         console.log("¡Modelo guardado!");
